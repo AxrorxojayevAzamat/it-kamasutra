@@ -1,0 +1,20 @@
+.nav {
+    grid-area: nav;
+    background-color: burlywood;
+    padding: 20px;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+.item a.active {
+    color: gold;
+}
+
+.friends {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    margin-top: 60px;
+}

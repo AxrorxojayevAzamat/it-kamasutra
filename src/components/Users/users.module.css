@@ -1,0 +1,12 @@
+.userPhoto {
+    width: 40px;
+}
+
+.pagination {
+    border: 1px solid burlywood;
+}
+
+.currentPage {
+    font-weight: bold;
+    border: 1px solid black;
+}
