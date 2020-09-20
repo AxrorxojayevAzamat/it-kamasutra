@@ -1,3 +1,15 @@
 .descriptionBlock {
     padding: 10px;
 }
+
+.avatar {
+    max-width: 200px;
+}
+
+.contact {
+    margin-left: 16px;
+}
+
+.contact i {
+    font-size: 18px;
+}

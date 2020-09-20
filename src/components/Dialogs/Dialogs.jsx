@@ -23,8 +23,8 @@ const DialogsForm = (props) => {
 const DialogsReduxForm = reduxForm({form: "dialogsMessages"})(DialogsForm)
 
 const Dialogs = (props) => {
-    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
-    let messsagesElements = props.dialogsPage.messages.map(m => <Message message={m.message}/>)
+    let dialogsElements = props.dialogsPage.dialogs.map((d, index) => <DialogItem key={index} name={d.name} id={d.id}/>)
+    let messsagesElements = props.dialogsPage.messages.map((m, index) => <Message key={index} message={m.message}/>)
 
     let onSendMessageClick = (values) => {
         props.sendMessage(values.dialogMessage);

@@ -1,11 +1,12 @@
 import React from "react";
 import styles from './users.module.css'
 import {NavLink} from "react-router-dom";
+import avatar from "../../assets/images/avatar.png"
 
 const User = ({users, followingProgress, follow, unfollow}) => {
     return users.map(u => <div key={u.id}>
             <NavLink to={"/profile/" + u.id}>
-                <img src={u.photos.small || "https://www.verasport.pl/pub/skin/default-skin/img/avatar.png"}
+                <img src={u.photos.small || avatar}
                      className={styles.userPhoto} alt='alt'/>
             </NavLink>
             <div>

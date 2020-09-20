@@ -24,7 +24,7 @@ let MyPostsReduxForm = reduxForm({form: "myposts"})(MyPostsForm)
 
 class MyPosts extends React.Component {
     render() {
-        let postsElements = this.props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+        let postsElements = this.props.posts.map((p,index) => <Post key={index} message={p.message} likesCount={p.likesCount}/>)
 
         let addPost = (values) => {
             this.props.addPost(values.newPost);
