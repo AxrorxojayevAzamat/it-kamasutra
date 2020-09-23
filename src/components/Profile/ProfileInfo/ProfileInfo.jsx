@@ -15,8 +15,9 @@ const ProfileInfo = ({profile, status, updateStatus, owner, updateMainPhoto, sav
     }
 
     const onSubmit = (formData) => {
-        saveProfile(formData)
-        setEditMode(false)
+        saveProfile(formData).then( () => {
+            setEditMode(false)
+        })
     }
 
     return (
@@ -26,7 +27,7 @@ const ProfileInfo = ({profile, status, updateStatus, owner, updateMainPhoto, sav
                 {owner && <input onChange={updatePhoto} type="file"/>}
                 <pre>
                     { editMode
-                        ? <ProfileDataForm initialValues={profile} onSubmit={onSubmit} />
+                        ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} />
                         : <ProfileData profile={profile} changeEditMode={() => setEditMode(true)} owner={owner} />}
                     <br/>
                     <ProfileStatusWithHook status={status} updateStatus={updateStatus}/>

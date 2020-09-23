@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styles from './users.module.css'
+import cn from 'classnames'
 
 const Paginator = (props) => {
     let { currentPage, totalUsersCount, pageSize, setPage, portionSize} = props
@@ -21,7 +22,7 @@ const Paginator = (props) => {
             {portionNumber > 1 &&
             <button onClick={ () => {setPortionNumber(portionNumber - 1)}} >Prev</button>}
             {pages.filter( p => ( p >= leftPortionPageNumber && p <= rightPortionPageNumber)).map(p => {
-                return <span className={(currentPage === p && styles.currentPage) || styles.pagination} onClick={ () => {setPage(p)} }>{p}</span>
+                return <span className={cn({[styles.currentPage]: currentPage === p}, styles.pagination)} onClick={ () => {setPage(p)} }>{p}</span>
             })}
             {portionCount > portionNumber &&
             <button onClick={ () => {setPortionNumber(portionNumber + 1)}}>Next</button>}
